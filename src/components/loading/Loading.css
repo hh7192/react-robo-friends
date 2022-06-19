@@ -1,14 +1,12 @@
 .loadingContainer {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(90deg, rgba(255,0,14,0.20772058823529416) 0%, rgba(255,231,134,1) 69%);
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     text-align: center;
     color: #343434;
-    padding: 270px;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .loadingContainer h1 {
@@ -21,4 +19,11 @@
     -webkit-text-fill-color: transparent;
     background-clip: border-box;
     -webkit-background-clip: text;
+}
+
+@media screen and (max-width: 500px) {
+    .loadingContainer h1 {
+        font-size: 70px;
+        letter-spacing: 3px;
+    }
 }

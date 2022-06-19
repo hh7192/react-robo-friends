@@ -1,14 +1,12 @@
 .notFoundContainer {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(90deg, rgba(255,0,14,0.20772058823529416) 0%, rgba(255,231,134,1) 69%);
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     text-align: center;
     color: #343434;
-    padding: 70px;
-    border-radius: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .notFoundContainer h1 {
@@ -38,4 +36,10 @@
 
 .notFoundContainer a:hover {
     background-color: #e55039;
+}
+
+@media screen and (max-width: 600px) {
+    .notFoundContainer h1 {
+        font-size: 160px;
+    }
 }

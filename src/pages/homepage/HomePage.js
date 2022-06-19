@@ -11,8 +11,8 @@ class HomePage extends Component {
     this.state = {
       users: [],
       inputValue: "",
-      isModalVisible: false,
       currentUser: null,
+      isModalVisible: false,
       isLoad: false,
     };
   }
