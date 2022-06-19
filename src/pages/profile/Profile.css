@@ -17,8 +17,8 @@
 }
 
 .profileBox:hover {
-    width: 600px;
-    height: 500px;
+    /* width: 600px;
+    height: 500px; */
     background-color: lightcyan;
 }
 
@@ -29,7 +29,7 @@
     transform: translateX(-50%);
     width: 150px;
     height: 150px;
-    background: lemonchiffon;
+    background: #fff;
     border-radius: 20px;
     box-shadow: 0 5px 50px rgba(0, 0, 0, 0.35);
     overflow: hidden;
@@ -37,9 +37,21 @@
 }
 
 .profileBox:hover .imgBox {
-    width: 250px;
-    height: 250px;
-    transform: translateX(-350px);
+    background-color: lemonchiffon;
+    width: 230px;
+    height: 230px;
+    transform: translateX(-290px);
+}
+
+.profileBox:hover .profileContent .profileDetails h2{
+    font-size: 2.3rem;
+    text-align: end;
+    line-height: 2.4rem;
+    color: brown;
+}
+
+.profileBox:hover .profileContent .profileDetails h2 div {
+font-size: 1rem;
 }
 
 .imgBox img {
@@ -64,7 +76,7 @@
     padding: 30px;
     text-align: center;
     width: 100%;
-    transition: all 0.5s;
+    transition: all 0.5s steps(100);
 }
 
 
@@ -73,12 +85,14 @@ font-size: 1.25rem;
 font-weight: 600;
 color: #555;
 line-height: 1.2rem;
+transition: all 0.1s steps(100);
 }
 
 .profileBox .profileContent .profileDetails h2 div {
     font-size: 0.75rem;
     font-weight: 500;
     opacity: 0.7;
+    transition: all 0.1s steps(100);
 }
 
 .profileBox .profileContent .profileDetails .profileData {
