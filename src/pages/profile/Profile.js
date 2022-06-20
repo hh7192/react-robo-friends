@@ -7,22 +7,22 @@ import Loading from "../../components/loading/Loading";
 
 const Profile = () => {
   // FETCHING DATA
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
       .then((response) => response.json())
       .then((data) => {
-        return setUsers(data), setIsLoad(true);
+        return setUser(data), setIsLoad(true);
       });
   }, []);
 
   // GETTING EVERY USER BY ID FROM USERS ARRAY
   const params = useParams();
   const paramsId = Number(params.id);
-  const thisUser = getUserById(users, paramsId);
-
+  const thisUser = getUserById(user, paramsId);
+  
   if (!isLoad)
     return (
       <div>
