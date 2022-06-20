@@ -9,10 +9,16 @@ const Profile = () => {
   // FETCHING DATA
   const [user, setUser] = useState([]);
   const [isLoad, setIsLoad] = useState(false);
+  const [hasFound, setHasFound] = useState(true);
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status >= 400) {
+          setHasFound(false);
+        }
+        return response.json();
+      })
       .then((data) => {
         return setUser(data), setIsLoad(true);
       });
@@ -22,14 +28,14 @@ const Profile = () => {
   const params = useParams();
   const paramsId = Number(params.id);
   const thisUser = getUserById(user, paramsId);
-  
+
   if (!isLoad)
     return (
       <div>
         <Loading />
       </div>
     );
-  else if (!thisUser) return <NotFound />;
+  else if (!hasFound) return <NotFound />;
   else {
     return (
       <div className='profileContainer'>
